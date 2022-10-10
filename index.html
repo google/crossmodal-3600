@@ -1,9 +1,362 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Crossmodal-3600</title>
-    </head>
-    <body>
-        <p>Placeholder web.</p>
-    </body>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Crossmodal 3600</title>
+    <meta name="description" content="Crossmodal 3600" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons&display=block"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-H3R11ZELBV"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+      gtag("config", "G-H3R11ZELBV");
+    </script>
+  </head>
+
+  <body onload="loadCallback();">
+    <div class="mask" id="start-mask"></div>
+    <div class="wrap">
+      <div class="center block">
+        <h1>Crossmodal-3600</h1>
+        <h2 class="subtitle">
+          A Massively Multilingual Multimodal Evaluation Dataset
+        </h2>
+        <div class="author-grid">
+          <div class="author-column">
+            <span class="author"
+              ><a
+                href="https://www.linkedin.com/in/ashishthapliyal"
+                target="_blank"
+                >Ashish Thapliyal</a
+              ></span
+            ><br />
+            <span class="affiliation">Google Research</span>
+          </div>
+          <div class="author-column">
+            <span class="author"
+              ><a href="https://jponttuset.cat" target="_blank"
+                >Jordi Pont-Tuset</a
+              ></span
+            ><br />
+            <span class="affiliation">Google Research</span>
+          </div>
+          <div class="author-column">
+            <span class="author"
+              ><a href="https://xchen147.github.io/" target="_blank"
+                >Xi Chen</a
+              ></span
+            ><br />
+            <span class="affiliation">Google Research</span>
+          </div>
+          <div class="author-column">
+            <span class="author"
+              ><a href="http://www.radusoricut.com/" target="_blank"
+                >Radu Soricut</a
+              ></span
+            ><br />
+            <span class="affiliation">Google Research</span>
+          </div>
+        </div>
+      </div>
+      <hr class="separator" />
+      <h2>Publication</h2>
+      <div class="center block">
+        <b
+          >Crossmodal-3600: A Massively Multilingual Multimodal Evaluation
+          Dataset</b
+        ><br />
+        Ashish Thapliyal, Jordi Pont-Tuset, Xi Chen, and Radu Soricut<br />
+        EMNLP, 2022<br />
+        [<a href="https://arxiv.org/pdf/2205.12522" target="_blank">PDF</a>] [<a
+          href="https://arxiv.org/abs/2205.12522"
+          target="_blank"
+          >arXiv</a
+        >] [<a href="javascript:document.getElementById('bibtex').open = true;"
+          >BibTeX</a
+        >]
+        <a href="https://arxiv.org/pdf/2205.12522" target="_blank">
+          <div class="row paper-row">
+            <div class="paper-col">
+              <img class="paper-col-im" src="./web-data/thumb/thumbnail1.jpg" />
+            </div>
+            <div class="paper-col">
+              <img class="paper-col-im" src="./web-data/thumb/thumbnail2.jpg" />
+            </div>
+            <div class="paper-col">
+              <img class="paper-col-im" src="./web-data/thumb/thumbnail3.jpg" />
+            </div>
+            <div class="paper-col">
+              <img class="paper-col-im" src="./web-data/thumb/thumbnail4.jpg" />
+            </div>
+            <div class="paper-col">
+              <img class="paper-col-im" src="./web-data/thumb/thumbnail5.jpg" />
+            </div>
+            <div class="paper-col">
+              <img class="paper-col-im" src="./web-data/thumb/thumbnail6.jpg" />
+            </div>
+            <div class="paper-col">
+              <img class="paper-col-im" src="./web-data/thumb/thumbnail7.jpg" />
+            </div>
+            <div class="paper-col">
+              <img class="paper-col-im" src="./web-data/thumb/thumbnail8.jpg" />
+            </div>
+            <div class="paper-col">
+              <img class="paper-col-im" src="./web-data/thumb/thumbnail9.jpg" />
+            </div>
+          </div>
+        </a>
+      </div>
+      <mwc-dialog id="bibtex">
+        <pre id="bibtex_text">
+@inproceedings{ThapliyalCrossmodal2022,
+  author        = {Ashish Thapliyal and Jordi Pont-Tuset and Xi Chen and Radu Soricut},
+  title         = {{Crossmodal-3600: A Massively Multilingual Multimodal Evaluation Dataset}},
+  booktitle     = {EMNLP},
+  year          = {2022}
+}</pre
+        >
+        <mwc-button
+          slot="secondaryAction"
+          onclick="navigator.clipboard.writeText(document.getElementById('bibtex_text').innerText);"
+        >
+          Copy to clipboard
+        </mwc-button>
+        <mwc-button
+          slot="primaryAction"
+          onclick="document.getElementById('bibtex').open = false;"
+        >
+          Close
+        </mwc-button>
+      </mwc-dialog>
+
+      <hr class="separator" />
+      <h2>Abstract</h2>
+      <div class="center block">
+        Research in massively multilingual image captioning has been severely
+        hampered by a lack of high-quality evaluation datasets. In this paper we
+        present the Crossmodal-3600 dataset (XM3600 in short), a
+        geographically-diverse set of 3600 images annotated with human-generated
+        reference captions in 36 languages. The images were selected from across
+        the world, covering regions where the 36 languages are spoken, and
+        annotated with captions that achieve consistency in terms of style
+        across all languages, while avoiding annotation artifacts due to direct
+        translation. We apply this benchmark to model selection for massively
+        multilingual image captioning models, and show strong correlation
+        results with human evaluations when using XM3600 as golden references
+        for automatic metrics.
+      </div>
+      <hr class="separator" />
+      <h2>Explore</h2>
+      <div class="center block">
+        <!-- Create an element where the map will take place -->
+        <!--    <svg id="my_dataviz" width="400" height="300"></svg>-->
+
+        <mwc-button
+          raised
+          class="page-button"
+          icon="open_in_browser"
+          onclick="openVisualizer();"
+        >
+          Open Annotation Visualizer
+        </mwc-button>
+      </div>
+
+      <hr class="separator" />
+      <h2>Downloads</h2>
+      <div class="center block" style="padding-bottom: 80px">
+        <a
+          class="no-decoration"
+          href="./web-data/captions.zip"
+          download="crossmodal3600-captions.zip"
+        >
+          <mwc-button raised class="page-button" icon="get_app">
+            Captions* (17 MB)
+          </mwc-button>
+        </a>
+        <a
+          class="no-decoration"
+          href="https://open-images-dataset.s3.amazonaws.com/crossmodal-3600/images.tgz"
+          download="crossmodal3600-images.tgz"
+        >
+          <mwc-button raised class="page-button" icon="get_app">
+            Images (302 MB)
+          </mwc-button>
+        </a>
+        <a
+          class="no-decoration"
+          href="./web-data/image_attributions.csv"
+          download="crossmodal3600-image-attributions.csv"
+        >
+          <mwc-button raised class="page-button" icon="get_app">
+            Image Attributions (1.3 MB)
+          </mwc-button>
+        </a>
+        <p class="license">
+          <i>* The annotations are licensed by Google LLC under
+          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
+          license.</i>
+        </p>
+      </div>
+    </div>
+
+    <div class="visualizer-container mask" id="visualizer">
+      <div class="visualizer-header">
+        <mwc-icon-button
+          class="float-left tooltip"
+          icon="close"
+          onclick="closeVisualizer();"
+        >
+          <span class="tooltiptext leftmost-tooltip">Close visualizer</span>
+        </mwc-icon-button>
+        <p>Crossmodal-3600 Visualizer</p>
+        <mwc-icon-button
+          class="float-right tooltip"
+          icon="arrow_forward"
+          onclick="nextImage();"
+        >
+          <span class="tooltiptext rightmost-tooltip">Next image</span>
+        </mwc-icon-button>
+        <mwc-icon-button
+          class="float-right tooltip"
+          icon="arrow_back"
+          onclick="previousImage();"
+        >
+          <span class="tooltiptext">Previous image</span>
+        </mwc-icon-button>
+        <mwc-icon-button
+          class="float-right tooltip"
+          icon="shuffle"
+          onclick="randomImage();"
+        >
+          <span class="tooltiptext">Random image</span>
+        </mwc-icon-button>
+        <mwc-icon-button
+          class="float-right tooltip"
+          icon="question_mark"
+          onclick="document.getElementById('help').open = true;"
+        >
+          <span class="tooltiptext">Show help</span>
+        </mwc-icon-button>
+        <input class="float-right" id="search-input" />
+      </div>
+      <div class="annotation-body" id="annotation-body"></div>
+      <div class="grid-body" id="grid-body"></div>
+      <div class="visualizer-footer"><p id="footer-text"></p></div>
+
+      <mwc-circular-progress id="progress" indeterminate density="4">
+      </mwc-circular-progress>
+      <div class="not-found" id="not-found">
+        <mwc-icon>report_problem</mwc-icon>
+        <p id="not-found-text"></p>
+      </div>
+      <mwc-dialog id="help"
+        ><h4>Search functions:</h4>
+        <ul>
+          <li>
+            Limit search to certain languages with keyword
+            <span class="tt">lang</span> (e.g.
+            <span class="tt">lang:en,es</span>)
+          </li>
+          <li>
+            Limit search to certain image locales with keyword
+            <span class="tt">locale</span> (e.g.
+            <span class="tt">locale:en,es</span>)
+          </li>
+        </ul>
+        <h4>Navigation functions:</h4>
+        <ul>
+          <li>
+            Show previous image with left arrow key
+            <span class="tt">&#8592;</span>.
+          </li>
+          <li>
+            Show next image with the right arrow key
+            <span class="tt">&#8594;</span>.
+          </li>
+        </ul>
+        <mwc-button slot="primaryAction" dialogAction="cancel"
+          >Close</mwc-button
+        >
+      </mwc-dialog>
+    </div>
+
+    <script type="text/javascript" src="web_code.js"></script>
+
+    <!--<script>-->
+
+    <!--  // The svg-->
+    <!--  var svg = d3.select("svg"),-->
+    <!--      width = +svg.attr("width"),-->
+    <!--      height = +svg.attr("height");-->
+
+    <!--  // Map and projection-->
+    <!--  var path = d3.geoPath();-->
+    <!--  var projection = d3.geoMercator()-->
+    <!--      .scale(70)-->
+    <!--      .center([0, 20])-->
+    <!--      .translate([width / 2, height / 2]);-->
+
+    <!--  // Data and color scale-->
+    <!--  var data = d3.map();-->
+    <!--  var colorScale = d3.scaleThreshold()-->
+    <!--      .domain([100000, 1000000, 10000000, 30000000, 100000000, 500000000])-->
+    <!--      .range(d3.schemeBlues[7]);-->
+
+    <!--  // Load external data and boot-->
+    <!--  d3.queue()-->
+    <!--      .defer(d3.json,-->
+    <!--          "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")-->
+    <!--      .defer(d3.csv,-->
+    <!--          "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world_population.csv",-->
+    <!--          function (d) {-->
+    <!--            data.set(d.code, +d.pop);-->
+    <!--          })-->
+    <!--      .await(ready);-->
+
+    <!--  function ready(error, topo) {-->
+    <!--    // Draw the map-->
+    <!--    svg.append("g")-->
+    <!--        .selectAll("path")-->
+    <!--        .data(topo.features)-->
+    <!--        .enter()-->
+    <!--        .append("path")-->
+    <!--        // draw each country-->
+    <!--        .attr("d", d3.geoPath()-->
+    <!--            .projection(projection)-->
+    <!--        )-->
+    <!--        // set the color of each country-->
+    <!--        .attr("fill", function (d) {-->
+    <!--          d.total = data.get(d.id) || 0;-->
+    <!--          return colorScale(d.total);-->
+    <!--        });-->
+    <!--  }-->
+
+    <!--</script>-->
+  </body>
 </html>
