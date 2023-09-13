@@ -23,10 +23,7 @@
     <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-H3R11ZELBV"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H3R11ZELBV"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
 
@@ -44,15 +41,11 @@
     <div class="wrap">
       <div class="center block">
         <h1>Crossmodal-3600</h1>
-        <h2 class="subtitle">
-          A Massively Multilingual Multimodal Evaluation Dataset
-        </h2>
+        <h2 class="subtitle">A Massively Multilingual Multimodal Evaluation Dataset</h2>
         <div class="author-grid">
           <div class="author-column">
             <span class="author"
-              ><a
-                href="https://research.google/people/108138/"
-                target="_blank"
+              ><a href="https://research.google/people/108138/" target="_blank"
                 >Ashish Thapliyal</a
               ></span
             ><br />
@@ -60,25 +53,19 @@
           </div>
           <div class="author-column">
             <span class="author"
-              ><a href="https://jponttuset.cat" target="_blank"
-                >Jordi Pont-Tuset</a
-              ></span
+              ><a href="https://jponttuset.cat" target="_blank">Jordi Pont-Tuset</a></span
             ><br />
             <span class="affiliation">Google Research</span>
           </div>
           <div class="author-column">
             <span class="author"
-              ><a href="https://xchen147.github.io/" target="_blank"
-                >Xi Chen</a
-              ></span
+              ><a href="https://xchen147.github.io/" target="_blank">Xi Chen</a></span
             ><br />
             <span class="affiliation">Google Research</span>
           </div>
           <div class="author-column">
             <span class="author"
-              ><a href="http://www.radusoricut.com/" target="_blank"
-                >Radu Soricut</a
-              ></span
+              ><a href="http://www.radusoricut.com/" target="_blank">Radu Soricut</a></span
             ><br />
             <span class="affiliation">Google Research</span>
           </div>
@@ -87,19 +74,14 @@
       <hr class="separator" />
       <h2>Publication</h2>
       <div class="center block">
-        <b
-          >Crossmodal-3600: A Massively Multilingual Multimodal Evaluation
-          Dataset</b
-        ><br />
+        <b>Crossmodal-3600: A Massively Multilingual Multimodal Evaluation Dataset</b><br />
         Ashish Thapliyal, Jordi Pont-Tuset, Xi Chen, and Radu Soricut<br />
         EMNLP, 2022<br />
         [<a href="https://arxiv.org/pdf/2205.12522" target="_blank">PDF</a>] [<a
           href="https://arxiv.org/abs/2205.12522"
           target="_blank"
           >arXiv</a
-        >] [<a href="javascript:document.getElementById('bibtex').open = true;"
-          >BibTeX</a
-        >]
+        >] [<a href="javascript:document.getElementById('bibtex').open = true;">BibTeX</a>]
         <a href="https://arxiv.org/pdf/2205.12522" target="_blank">
           <div class="row paper-row">
             <div class="paper-col">
@@ -147,10 +129,7 @@
         >
           Copy to clipboard
         </mwc-button>
-        <mwc-button
-          slot="primaryAction"
-          onclick="document.getElementById('bibtex').open = false;"
-        >
+        <mwc-button slot="primaryAction" onclick="document.getElementById('bibtex').open = false;">
           Close
         </mwc-button>
       </mwc-dialog>
@@ -158,18 +137,15 @@
       <hr class="separator" />
       <h2>Abstract</h2>
       <div class="center block">
-        Research in massively multilingual image captioning has been severely
-        hampered by a lack of high-quality evaluation datasets. In this paper we
-        present the Crossmodal-3600 dataset (XM3600 in short), a
-        geographically-diverse set of 3600 images annotated with human-generated
-        reference captions in 36 languages. The images were selected from across
-        the world, covering regions where the 36 languages are spoken, and
-        annotated with captions that achieve consistency in terms of style
-        across all languages, while avoiding annotation artifacts due to direct
-        translation. We apply this benchmark to model selection for massively
-        multilingual image captioning models, and show strong correlation
-        results with human evaluations when using XM3600 as golden references
-        for automatic metrics.
+        Research in massively multilingual image captioning has been severely hampered by a lack of
+        high-quality evaluation datasets. In this paper we present the Crossmodal-3600 dataset
+        (XM3600 in short), a geographically-diverse set of 3600 images annotated with
+        human-generated reference captions in 36 languages. The images were selected from across the
+        world, covering regions where the 36 languages are spoken, and annotated with captions that
+        achieve consistency in terms of style across all languages, while avoiding annotation
+        artifacts due to direct translation. We apply this benchmark to model selection for
+        massively multilingual image captioning models, and show strong correlation results with
+        human evaluations when using XM3600 as golden references for automatic metrics.
       </div>
       <hr class="separator" />
       <h2>Explore</h2>
@@ -177,36 +153,27 @@
         <!-- Create an element where the map will take place -->
         <!--    <svg id="my_dataviz" width="400" height="300"></svg>-->
 
-        <mwc-button
-          raised
-          class="page-button"
-          icon="open_in_browser"
-          onclick="openVisualizer();"
-        >
+        <mwc-button raised class="page-button" icon="open_in_browser" onclick="openVisualizer();">
           Open Annotation Visualizer
         </mwc-button>
       </div>
 
       <hr class="separator" />
       <h2>Downloads</h2>
-      <div class="center block" style="padding-bottom: 80px">
+      <div class="center block">
         <a
           class="no-decoration"
           href="./web-data/captions.zip"
           download="crossmodal3600-captions.zip"
         >
-          <mwc-button raised class="page-button" icon="get_app">
-            Captions* (17 MB)
-          </mwc-button>
+          <mwc-button raised class="page-button" icon="get_app"> Captions* (17 MB) </mwc-button>
         </a>
         <a
           class="no-decoration"
           href="https://open-images-dataset.s3.amazonaws.com/crossmodal-3600/images.tgz"
           download="crossmodal3600-images.tgz"
         >
-          <mwc-button raised class="page-button" icon="get_app">
-            Images (302 MB)
-          </mwc-button>
+          <mwc-button raised class="page-button" icon="get_app"> Images (302 MB) </mwc-button>
         </a>
         <a
           class="no-decoration"
@@ -218,42 +185,73 @@
           </mwc-button>
         </a>
         <p class="license">
-          <i>* The annotations are licensed by Google LLC under
-          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
-          license.</i>
+          <i
+            >* The annotations are licensed by Google LLC under
+            <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
+            license.</i
+          >
         </p>
+      </div>
+
+      <hr class="separator" />
+      <h2>Machine Translations of Other Datasets</h2>
+      <div class="center">
+        The original captions are from
+        <a href="https://ai.google.com/research/ConceptualCaptions/download" target="_blank"
+          >Conceptual Captions (CC3M)</a
+        >
+        and
+        <a href="http://images.cocodataset.org/annotations/annotations_trainval2014.zip"
+          >COCO Captions</a
+        >. The back translations are provided to allow for a rough estimation of the translation
+        quality.
+      </div>
+
+      <div class="center block" style="padding-bottom: 80px">
+        <a
+          class="no-decoration"
+          href="https://storage.googleapis.com/crossmodal-3600/cc3m_mt_train.jsonl.gz"
+          download="cc3m-train-machine-translations.zip"
+        >
+          <mwc-button raised class="page-button" icon="get_app"> CC3M Train (6.9 GB) </mwc-button>
+        </a>
+        <a
+          class="no-decoration"
+          href="https://storage.googleapis.com/crossmodal-3600/cc3m_mt_dev.jsonl.gz"
+          download="cc3m-dev-machine-translations.zip"
+        >
+          <mwc-button raised class="page-button" icon="get_app"> CC3M Dev (56 MB) </mwc-button>
+        </a>
+        <a
+          class="no-decoration"
+          href="https://storage.googleapis.com/crossmodal-3600/coco_mt_train.jsonl.gz"
+          download="coco-train-machine-translations.zip"
+        >
+          <mwc-button raised class="page-button" icon="get_app"> COCO Train (860 MB) </mwc-button>
+        </a>
+        <a
+          class="no-decoration"
+          href="https://storage.googleapis.com/crossmodal-3600/coco_mt_dev.jsonl.gz"
+          download="coco-dev-machine-translations.zip"
+        >
+          <mwc-button raised class="page-button" icon="get_app"> COCO Dev (38 MB) </mwc-button>
+        </a>
       </div>
     </div>
 
     <div class="visualizer-container mask" id="visualizer">
       <div class="visualizer-header">
-        <mwc-icon-button
-          class="float-left tooltip"
-          icon="close"
-          onclick="closeVisualizer();"
-        >
+        <mwc-icon-button class="float-left tooltip" icon="close" onclick="closeVisualizer();">
           <span class="tooltiptext leftmost-tooltip">Close visualizer</span>
         </mwc-icon-button>
         <p>Crossmodal-3600 Visualizer</p>
-        <mwc-icon-button
-          class="float-right tooltip"
-          icon="arrow_forward"
-          onclick="nextImage();"
-        >
+        <mwc-icon-button class="float-right tooltip" icon="arrow_forward" onclick="nextImage();">
           <span class="tooltiptext rightmost-tooltip">Next image</span>
         </mwc-icon-button>
-        <mwc-icon-button
-          class="float-right tooltip"
-          icon="arrow_back"
-          onclick="previousImage();"
-        >
+        <mwc-icon-button class="float-right tooltip" icon="arrow_back" onclick="previousImage();">
           <span class="tooltiptext">Previous image</span>
         </mwc-icon-button>
-        <mwc-icon-button
-          class="float-right tooltip"
-          icon="shuffle"
-          onclick="randomImage();"
-        >
+        <mwc-icon-button class="float-right tooltip" icon="shuffle" onclick="randomImage();">
           <span class="tooltiptext">Random image</span>
         </mwc-icon-button>
         <mwc-icon-button
@@ -269,8 +267,7 @@
       <div class="grid-body" id="grid-body"></div>
       <div class="visualizer-footer"><p id="footer-text"></p></div>
 
-      <mwc-circular-progress id="progress" indeterminate density="4">
-      </mwc-circular-progress>
+      <mwc-circular-progress id="progress" indeterminate density="4"> </mwc-circular-progress>
       <div class="not-found" id="not-found">
         <mwc-icon>report_problem</mwc-icon>
         <p id="not-found-text"></p>
@@ -280,13 +277,11 @@
         <ul>
           <li>
             Limit search to certain languages with keyword
-            <span class="tt">lang</span> (e.g.
-            <span class="tt">lang:en,es</span>)
+            <span class="tt">lang</span> (e.g. <span class="tt">lang:en,es</span>)
           </li>
           <li>
             Limit search to certain image locales with keyword
-            <span class="tt">locale</span> (e.g.
-            <span class="tt">locale:en,es</span>)
+            <span class="tt">locale</span> (e.g. <span class="tt">locale:en,es</span>)
           </li>
         </ul>
         <h4>Navigation functions:</h4>
@@ -300,9 +295,7 @@
             <span class="tt">&#8594;</span>.
           </li>
         </ul>
-        <mwc-button slot="primaryAction" dialogAction="cancel"
-          >Close</mwc-button
-        >
+        <mwc-button slot="primaryAction" dialogAction="cancel">Close</mwc-button>
       </mwc-dialog>
     </div>
 
