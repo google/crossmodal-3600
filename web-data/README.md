@@ -25,12 +25,16 @@ The original captions are from:
 and
 [COCO Captions](http://images.cocodataset.org/annotations/annotations_trainval2014.zip).
 
+For COCO captions we worked with the
+[Karpathy split](https://arxiv.org/pdf/1412.2306.pdf) with this
+[data](http://cs.stanford.edu/people/karpathy/deepimagesent/caption_datasets.zip).
+
 ## Format
 
 The translations are in JSONL format, where each line of the file is a
 JSON-encoded object with:
 
--   `image_id`: Unique identifier of each image
+-   `image_id` or `rec_num`: Unique identifier of each image
 -   `src_lang`: Source language
 -   `trg_lang`: Target language
 -   `caption_tokenized`: Original caption, tokenized
@@ -38,17 +42,32 @@ JSON-encoded object with:
 -   `backtranslation_tokenized`: Back-translated caption, tokenized. These are
     provided to allow for a rough estimation of the translation quality.
 
+We label the validation split as `dev`.
+
+The original COCO dataset has five captions per `image_id`. We flattened it by
+converting each COCO record into five records with one caption each and with
+`image_id` set to `image_id_N` for the Nth caption where N=\(1,2,3,4,5\).
+
+The published CC3M data does not provide an `image_id` hence we use `rec_num` to
+allow our users to identify the corresponding image and caption in the published
+CC3M dataset split. Thus, if a record in cc3m_mt_dev.jsonl has `rec_num`=1, it
+corresponds to the first record in the validation split of the published CC3M
+dataset. Further,numerical quantities in the English captions were replaced by
+'#' before translating them, thus for example '$123' --> '$###'. We translated
+3,318,270 out of the 3,318,333 records in the train split.
+
 ## Statistics
 
 Dataset    | Size
----------- | -----------
-coco-dev   | 850,000
-coco-train | 19,258,790
-cc3m-dev   | 538,560
-cc3m-train | 112,824,580
+---------- | ------------------------------------------------------------------
+coco-dev   | 850,000 (5,000 * 34 * 5 : Flattened Karpathy split validation set)
+coco-train | 19,258,790 (113_287 * 34 * 5 : Flattened Karpathy split train set)
+cc3m-dev   | 538,560 (15,840 * 34)
+cc3m-train | 112,821,180 (3,318,270 * 34)
 
-BLEU-4 scores calculated using sacre-bleu with `reference=caption_tokenized`,
-`hypothesis=backtranslation_tokenized`, and `tokenization=none`.
+BLEU-4 scores were calculated using sacre-bleu with
+`reference=caption_tokenized`, `hypothesis=backtranslation_tokenized`, and
+`tokenization=none`.
 
 LangId        | ar    | bn    | cs    | da    | de    | el    | es    | fa    | fi    | fil   | fr    | he    | hi    | hr    | hu    | id    | it    | ja    | ko    | mi    | nl    | no    | pl    | pt    | ro    | ru    | sv    | sw    | te    | th    | tr    | uk    | vi    | zh
 ------------- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ---
