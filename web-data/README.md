@@ -46,7 +46,8 @@ We label the validation split as `dev`.
 
 The original COCO dataset has five captions per `image_id`. We flattened it by
 converting each COCO record into five records with one caption each and with
-`image_id` set to `image_id_N` for the Nth caption where N=\(1,2,3,4,5\).
+`image_id` set to `image_id_N` for the Nth caption where N=\(1,2,3,4,5\). The
+captions were tokenized and lowercased.
 
 The published CC3M data does not provide an `image_id` hence we use `rec_num` to
 allow our users to identify the corresponding image and caption in the published
